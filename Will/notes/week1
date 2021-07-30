@@ -9,3 +9,52 @@ Assignment
 - relies on language-specific stuff though (generally speaking, but it's extremely common)
 - i.e. a, b = generate_tuple() #<- this function returns some sort of 2-element object, such as (1, 2) or [1, 2]
 
+Strings!
+- keep in mind strings essentially == lists, they're just a special case that contains only characters.
+
+print formatting
+- several ways, fstrings are def the most elegant imo
+- ',' implicitly casts to string, '+' requires manual cast
+
+casting
+- some things are implicitly cast (int -> double, etc.), others need to be more explicitly cast (str -> int)
+- generally numeric types are pretty interchangeable in python. other objects can be very hit or miss.
+
+input
+- useful note: DOESN'T automatically put a space after your input string, can look weird. Remember to put a space at the end of your string.
+- always gives a string. If you're expecting a different type, need to be very diligent about checking the input first, or you'll easily run into issues casting.
+- e.g. a user might input '5', or they might input 'five'. dumbass users break everything, so type checking/error checking is essential for these applications.
+ex.
+	x = input( "Type in a number between 1 and 5: ")
+	try:
+		x_int = int(x)
+	except:
+		print( "You suck. that's not a number." )
+
+comparison:
+- can be overriden in classes! write your own comparison functions for fun :) the primitive types have built-in behaviors (int, str, etc.)
+
+True/false:
+- get used to 'Truthy' and 'Falsy' values. ex. 'if x:' when x is not a bool. If x == 0, this returns 'False', otherwise it returns 'True'
+- some classic examples: None, empty lists ([]), tuples, etc. will be 'False' if evaluated as a conditional.
+- generally speaking it's a lot more safe to define some function that explicitly returns True/False and use that as the condition, but the above behavior/idiom is very common.
+
+if/elif
+- some subtleties here. most important part is that the FIRST statement that is true is the one that will run. never more than one.
+- keep in mind that it's just as valid to think about making blocks that evaluate if something is True as it is to have something run when that condition is False. <- can really help with readability to be explicit about this.
+
+general control flow:
+- pick the most sensible flow control! if vs while vs for
+- if -> finite choice structure. only executes once.
+- for -> definite number of loops (not necessarily known at compile time, but computable -before- the loop runs)
+- while -> indefinite number of loops, ending on condition (number of loops -not known- before loop runs)
+- also notable: continue statement -> works like break, but only shortcuts the current loop iteration. doesn't break the loop, just skips the rest of the current loop iteration.
+
+range():
+- very very useful! Keep in mind it is NOT inclusive of the last value. i.e. range(3) produces 0, 1, 2
+- what is known as an -iterable- in python. think of it like a list that isn't fully formed until you look through it. you can dump any iterable to a list using list(iterable). ex. list(range(3)) -> [0,1,2]
+- range syntax works the same as list slicing! (start, stop, step). remember step can be negative!
+- Bonus meme: try slicing a list like so: 
+	x = [0,1,2]
+	print( x[::-1])
+
