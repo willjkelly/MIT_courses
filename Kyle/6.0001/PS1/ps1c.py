@@ -50,6 +50,7 @@ if __name__ == "__main__":
         else:
             solved = True
             steps = x
+            break
     
     if solved:
         print("Best Savings Rate:", round(portion_saved, 4))
