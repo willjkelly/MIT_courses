@@ -1,0 +1,11 @@
+Covers lectures 1 and 2
+
+Everything in Python is an object!
+^very malleable, but has some drawbacks
+^especially useful when writing functions, since you can call the same methods/operators on diff types
+
+Assignment
+- can have more than 1 thing to the left of the equals sign.
+- relies on language-specific stuff though (generally speaking, but it's extremely common)
+- i.e. a, b = generate_tuple() #<- this function returns some sort of 2-element object, such as (1, 2) or [1, 2]
+
