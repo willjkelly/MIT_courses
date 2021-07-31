@@ -33,11 +33,10 @@ if __name__ == "__main__":
         while(month_count < 37):
             portion_saved = (((low + high) / 2) / 10000)
             current_savings = AdvanceMonth(current_savings, monthly_salary, portion_saved, INTEREST_RATE)
-            month_count+=1
             #print(portion_saved, current_savings, month_count)
-
             if(month_count % 6 == 0):
                 monthly_salary += monthly_salary*semi_annual_raise
+            month_count+=1
         #print(portion_saved, current_savings, month_count, x)        
         if(current_savings > TOTAL_COST*PORTION_DOWN_PAYMENT + 100):
             high = portion_saved*10000
